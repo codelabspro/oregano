@@ -1,0 +1,4 @@
+$: 1200166226
+BuildCommand: build.sh
+RunCommand: run.sh
+Product: build/Release-iphoneos/oregano.app/oregano
