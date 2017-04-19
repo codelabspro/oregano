@@ -1,23 +1,29 @@
 
 var Observable = require("FuseJS/Observable");
-var name = Observable("Oregano");
 
-var location = Observable("Vermont");
+var hike = this.Parameter;
+var name = hike.map(function(x) { return x.name; });
+var location = hike.map(function(x) { return x.location; });
+var distance = hike.map(function(x) { return x.distance; });
+var rating = hike.map(function(x) { return x.rating; });
+var comments = hike.map(function(x) { return x.comments; });
+function save() {
+	Context.updateHike(hike.value.id, name.value, location.value, distance.value, rating.value, comments.value);
+	router.goBack();
+}
 
-var distance = Observable(10.4);
-
-var rating = Observable(4);
-
-var comments = Observable("Great hike");
-
-var hike = Observable();
-
-
+function cancel() {
+	// Refresh hike value to reset dependent Observables' values
+	hike.value = hike.value;
+	router.goBack();
+}
 
 module.exports = {
 	name: name,
 	location: location,
 	distance: distance,
 	rating: rating,
-	comments: comments
+	comments: comments,
+	cancel: cancel,
+	save: save
 };

@@ -1,11 +1,12 @@
-var hikes = require("hikes");
+var Context = require("Modules/Context");
 
-function chooseHike(arg) {
-    // TODO
+function goToHike(arg) {
+    var hike = arg.data;
+    router.push("editHike", hike);
 }
 
 module.exports = {
-    hikes: hikes,
+    hikes: Context.hikes,
 
-    chooseHike: chooseHike
+    goToHike: goToHike
 };

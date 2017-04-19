@@ -1,5 +1,6 @@
 <Page ux:Class="EditHikePage">
-	 <JavaScript File="EditHikePage.js" />
+	<Router ux:Dependency="router" />
+	<JavaScript File="EditHikePage.js" />
 	<ScrollView>
 		<StackPanel>
 
@@ -18,6 +19,9 @@
 
 			<Text>Comments:</Text>
 			<TextBox Value="{comments}" TextWrapping="Wrap"/>
+
+			<Button Text="Save" Clicked="{save}" />
+			<Button Text="Cancel" Clicked="{cancel}" />
 
 		</StackPanel>
 	</ScrollView>	
