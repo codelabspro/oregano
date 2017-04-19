@@ -1,0 +1,25 @@
+<Page ux:Class="EditHikePage">
+	 <JavaScript File="EditHikePage.js" />
+	<ScrollView>
+		<StackPanel>
+
+			<Text Value="{name}">Tricky Trails</Text>
+			<TextBox Value="{name}"/>
+
+			<Text>Location:</Text>
+			<TextBox Value="{location}" />
+
+			<Text>Distance:</Text>
+			<TextBox Value="{distance}" InputHint="Decimal" />
+
+			<Text>Rating:</Text>
+			<TextBox Value="{rating}" InputHint="Integer" />
+
+
+			<Text>Comments:</Text>
+			<TextBox Value="{comments}" TextWrapping="Wrap"/>
+
+		</StackPanel>
+	</ScrollView>	
+	
+</Page>
